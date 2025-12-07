@@ -33,5 +33,6 @@ A structured and beginner-friendly roadmap to learning the fundamentals of web d
 
 ## **🗂️ Class 4 — Project Structure**
 
-- Building a multi-page website
 - Tables
+- Semantic Tags
+- Inline & Block Level Elements
