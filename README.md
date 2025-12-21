@@ -62,3 +62,7 @@ A structured and beginner-friendly roadmap to learning the fundamentals of web d
 - height, width
 - :hover
 - transition basics
+
+## **🗂️ Class 8 — Flex Box**
+
+- Flex properties
