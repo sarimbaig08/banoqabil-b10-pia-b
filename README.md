@@ -80,3 +80,11 @@ A structured and beginner-friendly roadmap to learning the fundamentals of web d
 - Basic properties
 
 ## **🗂️ Class 11 — Positions**
+
+- Css position properties
+- Absolute, Fixed, Sticky, Relative
+
+## **🗂️ Class 12 — Javascript**
+
+- Introduction to Javascript
+- Runing js inside chrome v8 engine and outside using node js env
