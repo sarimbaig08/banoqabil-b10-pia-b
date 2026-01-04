@@ -66,3 +66,17 @@ A structured and beginner-friendly roadmap to learning the fundamentals of web d
 ## **🗂️ Class 8 — Flex Box**
 
 - Flex properties
+
+## **🗂️ Class 9 — Cloning Website**
+
+- Understanding of responsive layouts
+- Using flex, margins and paddings
+- Gradient Colors and background images
+
+## **🗂️ Class 10 — Bootstrap**
+
+- Connecting trough CDN
+- Components usage
+- Basic properties
+
+## **🗂️ Class 11 — Positions**
