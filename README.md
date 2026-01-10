@@ -88,3 +88,12 @@ A structured and beginner-friendly roadmap to learning the fundamentals of web d
 
 - Introduction to Javascript
 - Runing js inside chrome v8 engine and outside using node js env
+
+## **🗂️ Class 13 — Javascript Variables**
+
+- Difference bw Word and Keyword
+- Var, Let, Const
+- Diff between undefined and not defined
+- Primitive(data types like number, string ), Non Primitive/Reference Type(object, array, functions)
+  --Primitives are stored by value, non-primitives are stored by reference.
+- Hoisting
