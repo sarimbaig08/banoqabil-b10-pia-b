@@ -97,3 +97,15 @@ A structured and beginner-friendly roadmap to learning the fundamentals of web d
 - Primitive(data types like number, string ), Non Primitive/Reference Type(object, array, functions)
   --Primitives are stored by value, non-primitives are stored by reference.
 - Hoisting
+
+## **🗂️ Class 14 — JS Arthematic Operations & Prompts**
+
+- Difference bw Word and Keyword
+- If Else
+- What are functions
+
+## **🗂️ Class 16 — User Sign up using local storage**
+
+- Forms
+- Dom (getting values from html)
+- Localstorage

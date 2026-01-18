@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Functions & Conditions</h1>
+
+    <form onsubmit="getUserDetails(event)">
+      <label for="userEmail"> Email: </label>
+      <input type="text" id="userEmail" placeholder="Enter your email" />
+      <br />
+      <br />
+      <label>
+        Password:
+        <input
+          type="password"
+          id="userPassword"
+          placeholder="Enter your password"
+        />
+      </label>
+      <br />
+      <br />
+      <label>Gender:</label>
+      <input type="radio" name="gender" value="male" /> Male
+      <input type="radio" name="gender" value="female" /> Female
+      <input type="radio" name="gender" value="tiktoker" /> Tiktoker
+
+      <br />
+      <br />
+
+      <!-- <label>Select any 2 courses</label>
+      <br />
+      <br /> -->
+      <!-- <input type="checkbox" name="course" value="web&app" /> Web & App
+      <br />
+      <input type="checkbox" name="course" value="marketing" /> Marketing
+      <br />
+      <input type="checkbox" name="course" value="cyberSecurity" /> Cyber
+      Security
+      <br />
+      <input type="checkbox" name="course" value="backend" /> Backend
+      <br />
+      <br /> -->
+      <input type="submit" />
+    </form>
+
+    <!-- <button onclick="getUserDetails()">Function chalo</button> -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
