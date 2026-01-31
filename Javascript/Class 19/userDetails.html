@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="userName"></h1>
+    <h2 id="userId"></h2>
+
+    <script>
+      let userName = document.getElementById("userName");
+      let userId = document.getElementById("userId");
+
+      let userIdFromUrl = new URLSearchParams(window.location.search).get("id");
+      console.log("User ID from URL:", userIdFromUrl);
+
+      const getUsersData = () => {
+        fetch(`https://fakestoreapi.com/users/${userIdFromUrl}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            userName.innerText = data.name.firstname + " " + data.name.lastname;
+            userId.innerText = data.id;
+          })
+          .catch((error) => console.error("Error fetching users:", error));
+      };
+
+      getUsersData();
+    </script>
+  </body>
+</html>

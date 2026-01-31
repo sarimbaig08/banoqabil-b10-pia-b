@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="" alt="" />
+
+    <form onsubmit="handleImageSubmit(event)">
+      <input type="file" id="imageInput" accept="image/*" multiple />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      let imageUrl = document.querySelector("img");
+      imageUrl.src = localStorage.getItem("img");
+      //   imageUrl.src = JSON.parse(localStorage.getItem("user")).image;
+
+      function handleImageSubmit(event) {
+        event.preventDefault();
+        console.log(
+          "Form submitted with image:",
+          document.getElementById("imageInput").files[0],
+        );
+
+        const file = document.getElementById("imageInput").files[0];
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = () => {
+          console.log(reader.result);
+          //   imageUrl.src = reader.result;
+          localStorage.setItem("img", reader.result);
+          //   const base64Image = reader.result;
+          //   imageUrl.src = reader.result;
+
+          //   const user = {
+          //     image: base64Image,
+          //   };
+
+          //   localStorage.setItem("imageURl", base64Image);
+          //   console.log("reader:", reader);
+
+          //   console.log("Base64 Image String:", base64Image);
+        };
+      }
+    </script>
+  </body>
+</html>

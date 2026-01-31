@@ -104,8 +104,25 @@ A structured and beginner-friendly roadmap to learning the fundamentals of web d
 - If Else
 - What are functions
 
-## **🗂️ Class 16 — User Sign up using local storage**
+## **🗂️ Class 16 — Forms & local storage**
 
 - Forms
 - Dom (getting values from html)
 - Localstorage
+
+## **🗂️ Class 17 — User Sign up using local storage**
+
+- Making login & signup page using ai
+- Getting user details and saving it to localstorage
+- Validate signup user and conditions
+- Assignment: Login user using local storage
+
+## **🗂️ Class 18 — User signup & login**
+
+- Login user from local storage
+
+## **🗂️ Class 19 — API & DOM**
+
+- Hitting api using fetch (then, catch)
+- Mapping the data in userDetails page
+- Getting selected user if from params
