@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      header {
+        background-color: #ffffff;
+        padding: 15px 40px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .profile-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .profile-img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: #ddd;
+        object-fit: cover;
+        cursor: pointer;
+        border: 2px solid #007bff;
+        transition: transform 0.3s ease;
+      }
+
+      .profile-img:hover {
+        transform: scale(1.1);
+      }
+
+      .user-name {
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      main {
+        padding: 40px;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">MyApp</div>
+      <div class="profile-section">
+        <span class="user-name">User Name</span>
+        <img alt="User Profile" class="profile-img" id="profile-img" />
+      </div>
+    </header>
+
+    <main>
+      <h1>Welcome to Landing Page</h1>
+      <p>Content goes here...</p>
+    </main>
+    <script>
+      let currentUser = JSON.parse(localStorage.getItem("currentUserB"));
+
+      document.getElementById("profile-img").src = currentUser.profileImgUrl;
+    </script>
+  </body>
+</html>

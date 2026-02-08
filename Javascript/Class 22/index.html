@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const numArray = [1, 2, 3, 4, 5];
+
+      //   let sum = numArray.reduce((accumulator, currentValue) => {
+      //     console.log("accumulator:", accumulator);
+      //     currentValue = currentValue ** 2;
+      //     console.log("currentValue:", currentValue);
+      //     return accumulator + currentValue;
+      //   }, 0);
+      //   console.log(sum);
+      //   const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+      //   let newArrEach = numArray.forEach((num) => {
+      //     num = num * 2;
+      //     return num;
+      //   });
+
+      //   console.log(newArrEach);
+
+      //   let newArrMap = numArray.map((num) => {
+      //     num = num * 2;
+      //     return num;
+      //   });
+      //   console.log(newArrMap);
+      //   console.log(numArray);
+
+      //   fruits.forEach((fruit, index) => {
+      //     console.log(index);
+      //     console.log(fruit);
+      //   });
+
+      //   const user = {
+      //     name: "John",
+      //     age: 30,
+      //     city: "New York",
+      //   };
+      //   user.name = "Jane";
+      //   user["number"] = 123;
+      //   console.log(Object.keys(user));
+      //   console.log(user);
+
+      const students = [
+        { name: "Alice", subject: "Math" },
+        { name: "Bob", subject: "Science" },
+        { name: "Charlie", subject: "Math" },
+      ];
+
+      //   let courses = students.map((student) => {
+      //     let key = student.subject;
+      //     let courseObj = [];
+
+      //     return (courseObj[key] = courseObj[key] || []).push(student);
+      //   });
+
+      const groupedStudents = students.reduce((accumulator, currentStudent) => {
+        const key = currentStudent.subject;
+        if (!accumulator[key]) {
+          accumulator[key] = [];
+        }
+        accumulator[key].push(currentStudent);
+        return accumulator;
+      }, {});
+      console.log(groupedStudents);
+    </script>
+
+    accumalator={ Math : [ { std1 }, { std3 } ] Science:[ { std2 }] ], }
+  </body>
+</html>

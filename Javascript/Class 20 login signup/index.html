@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      }
+
+      .card {
+        width: 100%;
+        max-width: 380px;
+        background: #111827;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #e5e7eb;
+      }
+
+      .field {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 14px;
+        color: #9ca3af;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        background: #1f2933;
+        border: 1px solid #374151;
+        border-radius: 6px;
+        color: #e5e7eb;
+        outline: none;
+      }
+
+      input:focus {
+        border-color: #6366f1;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      .message {
+        margin-top: 12px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .success {
+        color: #22c55e;
+      }
+
+      .error {
+        color: #ef4444;
+      }
+
+      .link {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 14px;
+        color: #9ca3af;
+      }
+
+      .link a {
+        color: #8b5cf6;
+        text-decoration: none;
+      }
+
+      .link a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Login</h2>
+
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="email" />
+      </div>
+
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="password" />
+      </div>
+
+      <button onclick="login()">Login</button>
+      <div class="message" id="message"></div>
+
+      <div class="link">
+        Don’t have an account? <a href="./signup.html">Signup</a>
+      </div>
+    </div>
+
+    <script>
+      function login() {
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const message = document.getElementById("message");
+
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+
+        const user = users.find(
+          (u) => u.email === email && u.password === password,
+        );
+
+        localStorage.setItem("currentUserB", JSON.stringify(user));
+
+        if (!user) {
+          message.textContent = "Invalid email or password.";
+          message.className = "message error";
+          return;
+        }
+
+        message.textContent = `Welcome, ${user.username}!`;
+        message.className = "message success";
+
+        window.location.href = "landingPage.html";
+      }
+    </script>
+  </body>
+</html>

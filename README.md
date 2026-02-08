@@ -126,3 +126,18 @@ A structured and beginner-friendly roadmap to learning the fundamentals of web d
 - Hitting api using fetch (then, catch)
 - Mapping the data in userDetails page
 - Getting selected user if from params
+
+## **🗂️ Class 20 — API & DOM**
+
+- Users api and mapping them in table
+
+## **🗂️ Class 21 — Custom Bil Generator**
+
+- Maing a form for user to make an order
+- Calculating the total sum and generating bill to user
+
+## **🗂️ Class 22 — Array Methods**
+
+- Foreach, Map, Reduce
+- Adding new values in object
+- Basic problem solving

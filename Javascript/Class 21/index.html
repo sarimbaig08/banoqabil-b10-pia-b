@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burger Order Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 600px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 28px;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+        font-size: 14px;
+      }
+
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: border-color 0.3s;
+      }
+
+      select:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      .checkbox-group,
+      .radio-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .checkbox-item,
+      .radio-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+      }
+
+      .checkbox-item label,
+      .radio-item label {
+        margin: 0;
+        font-weight: normal;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s;
+        margin-top: 20px;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      .output {
+        margin-top: 30px;
+        padding: 20px;
+        background: #f5f5f5;
+        border-radius: 5px;
+        border-left: 4px solid #667eea;
+        display: none;
+      }
+
+      .output.show {
+        display: block;
+      }
+
+      .output h2 {
+        color: #333;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .output pre {
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 13px;
+        color: #333;
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🍔 Burger Order Form</h1>
+
+      <form id="orderForm">
+        <!-- Bread Selection -->
+        <div class="form-group">
+          <label for="bread">Bread Type:</label>
+          <select id="bread" name="bread" required>
+            <option value="">-- Select Bread --</option>
+            <option value="Potato Bun">Potato Bun</option>
+            <option value="Milk Bun">Milk Bun</option>
+            <option value="Classic Bun">Classic Bun</option>
+          </select>
+        </div>
+
+        <!-- Meat Selection -->
+        <div class="form-group">
+          <label for="meat">Meat Type:</label>
+          <select id="meat" name="meat" required>
+            <option value="">-- Select Meat --</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Beef">Beef</option>
+            <option value="Mutton">Mutton</option>
+          </select>
+        </div>
+
+        <!-- Lettuce -->
+        <div class="form-group">
+          <label>Lettuce:</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="lettuce" name="lettuce" value="Yes" />
+              <label for="lettuce">Yes, add lettuce</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tomatoes -->
+        <div class="form-group">
+          <label>Tomatoes:</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="tomatoes"
+                name="tomatoes"
+                value="Yes"
+              />
+              <label for="tomatoes">Yes, add tomatoes</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sauces -->
+        <div class="form-group">
+          <label>Sauces:</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="sauces" name="sauces" value="Yes" />
+              <label for="sauces">Yes, add sauces</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drink Selection -->
+        <div class="form-group">
+          <label for="drink">Drink:</label>
+          <select id="drink" name="drink" required>
+            <option value="">-- Select Drink --</option>
+            <option value="Next Cola">Next Cola</option>
+            <option value="Sting">Sting</option>
+            <option value="Fizz Up">Fizz Up</option>
+          </select>
+        </div>
+
+        <!-- Fries Size -->
+        <div class="form-group">
+          <label>Fries Size:</label>
+          <div class="radio-group">
+            <div class="radio-item">
+              <input
+                type="radio"
+                id="friesSmall"
+                name="fries"
+                value="Small"
+                required
+              />
+              <label for="friesSmall">Small</label>
+            </div>
+            <div class="radio-item">
+              <input
+                type="radio"
+                id="friesMedium"
+                name="fries"
+                value="Medium"
+              />
+              <label for="friesMedium">Medium</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" id="friesLarge" name="fries" value="Large" />
+              <label for="friesLarge">Large</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit">Place Order</button>
+      </form>
+
+      <div class="output" id="output">
+        <h2>Order Details:</h2>
+        <pre id="orderDetails"></pre>
+      </div>
+      <div class="output" id="billDiv">
+        <h2>Total Bill:</h2>
+        <pre id="totalBill"></pre>
+      </div>
+    </div>
+
+    <script>
+      let buns = {
+        PotatoBun: 100,
+        MilkBun: 80,
+        ClassicBun: 50,
+      };
+
+      let meat = {
+        Chicken: 150,
+        Beef: 200,
+        Mutton: 250,
+      };
+
+      let lettuce = 20;
+      let tomatoes = 30;
+      let sauces = 10;
+
+      let drinks = {
+        NextCola: 50,
+        Sting: 40,
+        FizzUp: 30,
+      };
+
+      let fries = {
+        Small: 30,
+        Medium: 50,
+        Large: 70,
+      };
+
+      document
+        .getElementById("orderForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const bread = document.getElementById("bread").value;
+          const meat = document.getElementById("meat").value;
+          const lettuce = document.getElementById("lettuce").checked
+            ? "Yes"
+            : "No";
+          const tomatoes = document.getElementById("tomatoes").checked
+            ? "Yes"
+            : "No";
+          const sauces = document.getElementById("sauces").checked
+            ? "Yes"
+            : "No";
+          const drink = document.getElementById("drink").value;
+          const fries = document.querySelector(
+            'input[name="fries"]:checked',
+          ).value;
+
+          // Create order object
+          const order = {
+            bread: bread,
+            meat: meat,
+            lettuce: lettuce,
+            tomatoes: tomatoes,
+            sauces: sauces,
+            drink: drink,
+            fries: fries,
+            orderTime: new Date().toLocaleString(),
+          };
+
+          let total = billCalculator(order);
+
+          // Display order on page
+          const outputDiv = document.getElementById("output");
+          const orderDetails = document.getElementById("orderDetails");
+          const billDiv = document.getElementById("billDiv");
+          const totalBill = document.getElementById("totalBill");
+          orderDetails.textContent = JSON.stringify(order, null, 2);
+          totalBill.textContent = total;
+          outputDiv.classList.add("show");
+          billDiv.classList.add("show");
+        });
+
+      const billCalculator = (order) => {
+        let total = 0;
+
+        total += buns[order.bread.replace(/\s/g, "")];
+        total += meat[order.meat.replace(/\s/g, "")];
+        if (order.lettuce === "Yes") total += lettuce;
+        if (order.tomatoes === "Yes") total += tomatoes;
+        if (order.sauces === "Yes") total += sauces;
+        total += drinks[order.drink.replace(/\s/g, "")];
+        total += fries[order.fries.replace(/\s/g, "")];
+        console.log("total", total);
+        return `Total Bill: ${total} pkr`;
+      };
+    </script>
+  </body>
+</html>
